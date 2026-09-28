@@ -9,9 +9,9 @@ Systems Manager Session Manager (no SSH, no open inbound ports, no key pair).
    your Terraform Cloud organization and workspace name:
    ```hcl
    cloud {
-     organization = "CHANGE_ME_ORG"
+     organization = "HPC"
      workspaces {
-       name = "CHANGE_ME_WORKSPACE"
+       name = "ansible"
      }
    }
    ```
