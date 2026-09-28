@@ -3,11 +3,13 @@ set -euxo pipefail
 
 hostnamectl set-hostname ${hostname}
 
-dnf install -y python3 python3-pip
+dnf install -y python3 python3-pip git
 
 su - ec2-user -c "python3 -m venv /home/ec2-user/.venv"
 su - ec2-user -c "/home/ec2-user/.venv/bin/pip install --upgrade pip"
 su - ec2-user -c "/home/ec2-user/.venv/bin/pip install ansible"
+
+su - ec2-user -c "git clone https://github.com/gmaciascarreon/ansible_examples.git /home/ec2-user/ansible_examples"
 
 mkdir -p /home/ec2-user/.ssh
 cat > /home/ec2-user/.ssh/id_rsa <<'KEY'
